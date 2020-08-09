@@ -20,6 +20,9 @@ import java.util.Set;
 @Proxy(lazy = false)
 public class User extends AuditModel{
 
+    @Column(name = "enabled")
+    private boolean enabled;
+
     @NotNull
     @Column(name = "name")
     @Pattern(regexp = "[\\w\\s]+")
@@ -27,7 +30,7 @@ public class User extends AuditModel{
 
 
     @NotNull
-    @Size(min = 8, max = 60, message = "(Error: Password should be from 12 to 30 characters)")
+    @Size(min = 8, max = 60, message = "(Error: Password should be from 8 to 60 characters)")
     @Column(name = "password")
     private String password;
 
@@ -59,6 +62,7 @@ public class User extends AuditModel{
         this.email =registrationDTO.getEmail();
         this.password = registrationDTO.getPassword();
         this.phone = registrationDTO.getPhone();
+        this.enabled = false;
 
     }
 

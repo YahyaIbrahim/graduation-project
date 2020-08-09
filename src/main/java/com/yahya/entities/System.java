@@ -24,7 +24,7 @@ public class System extends AuditModel{
 
     @NotNull
     @Column(name = "temperature")
-    private int temperature;
+    private String temperature;
 
     @NotNull
     @Column(name = "time")
@@ -32,7 +32,7 @@ public class System extends AuditModel{
 
     @NotNull
     @Column(name = "liter")
-    private int liter;
+    private String liter;
 
     @JsonIgnore
     @ManyToOne
