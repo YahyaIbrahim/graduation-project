@@ -42,7 +42,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 .description("\"GP REST API.\"")
                 .version("1.0.0")
                 .license("GP Version 1.0")
-                .contact(new Contact("GP", "https://localhost:8070", "yibrahim.py@gmail.com"))
+                .contact(new Contact("GP", "https://api.wellwaretech.com", "yibrahim.py@gmail.com"))
                 .build();
     }
 
