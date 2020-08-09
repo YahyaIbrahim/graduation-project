@@ -35,6 +35,12 @@ public class UserService {
         return user;
     }
 
+    public User loadByEmail(String email){
+
+        return userRepo.findByEmail(email);
+
+    }
+
     public SuccessEntity editByEmail(String email, User profileDTO) {
 
         User updatedUser = userRepo.findByEmail(email);

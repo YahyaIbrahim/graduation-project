@@ -24,4 +24,9 @@ public class SystemService {
         systemRepo.save(system);
 
     }
+
+
+    public System find(User user){
+        return systemRepo.findByUser(user);
+    }
 }

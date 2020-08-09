@@ -4,9 +4,11 @@ package com.yahya.controllers;
 
 import com.yahya.DTO.EmailDTO;
 import com.yahya.DTO.SystemDTO;
+import com.yahya.entities.System;
 import com.yahya.entities.User;
 import com.yahya.exceptions.SuccessEntity;
 import com.yahya.exceptions.SuccessString;
+import com.yahya.exceptions.SuccessSystem;
 import com.yahya.services.SystemService;
 import com.yahya.services.UserService;
 import io.swagger.annotations.Api;
@@ -59,6 +61,20 @@ public class UserController {
             return new SuccessString(200,  "Done", null);
         }catch (NullPointerException d) {
             return new SuccessString(400,  null, "error");
+        }
+
+    }
+
+
+    @ApiOperation(value = "System")
+    @GetMapping(path = "{email}/system-get",produces = "application/json")
+    public SuccessSystem systemPost(@PathVariable("email") String email) {
+        try {
+            User user = profileService.loadByEmail(email);
+            System system = systemService.find(user);
+            return new SuccessSystem(200,  system, null);
+        }catch (NullPointerException d) {
+            return new SuccessSystem(400,  null, "error");
         }
 
     }
