@@ -7,5 +7,5 @@ import java.sql.Time;
 
 public interface SystemRepo extends JpaRepository<System, Long> {
 
-    System findTopByOrderByIdDesc(User user);
+    System findTopByUserOrderByIdDesc(User user);
 }

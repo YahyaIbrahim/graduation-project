@@ -27,6 +27,6 @@ public class SystemService {
 
 
     public System find(User user){
-        return systemRepo.findTopByOrderByIdDesc(user);
+        return systemRepo.findTopByUserOrderByIdDesc(user);
     }
 }
