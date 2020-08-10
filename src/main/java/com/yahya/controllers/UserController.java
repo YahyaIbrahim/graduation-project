@@ -32,8 +32,9 @@ public class UserController {
 
 
     @ApiOperation(value = "Updates profile.")
-    @PostMapping(path = "/edit/{email}",produces = "application/json",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/edit/{email}",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
     public SuccessEntity editByEmail(@PathVariable("email") String email, @RequestBody User profile) {
+        java.lang.System.out.println(profile);
         return profileService.editByEmail(email, profile);
     }
 
@@ -41,7 +42,7 @@ public class UserController {
 
 
     @ApiOperation(value = "change password")
-    @PostMapping(path = "/changepassword",produces = "application/json",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/changepassword",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
     public SuccessString changePassword(@RequestBody EmailDTO email) {
         try {
             profileService.changePassword(email.getEmail());
@@ -54,7 +55,7 @@ public class UserController {
 
 
     @ApiOperation(value = "System")
-    @PostMapping(path = "{email}/system-post",produces = "application/json",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "{email}/system-post",produces = MediaType.APPLICATION_JSON_VALUE ,consumes = MediaType.APPLICATION_JSON_VALUE)
     public SuccessString systemPost(@PathVariable("email") String email, @RequestBody SystemDTO systemDTO) {
         try {
             systemService.save(systemDTO,email);
