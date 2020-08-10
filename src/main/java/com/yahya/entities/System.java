@@ -41,11 +41,6 @@ public class System extends AuditModel{
 
 
     public System() {
-        this.liter = "0";
-        this.temperature = "0";
-        this.time = "10:00";
-        this.enabled = true;
-
     }
 
     public System(SystemDTO systemDTO){

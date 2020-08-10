@@ -8,20 +8,14 @@ import javax.validation.constraints.NotNull;
 public class SystemDTO {
 
     @NotNull
-    private String temperature;
+    private String temperature = "0";
 
     @NotNull
-    private String time;
+    private String time ="10:00";
 
     @NotNull
-    private String liter;
-
-    public SystemDTO() {
-        this.liter = "0";
-        this.temperature = "0";
-        this.time = "10:00";
+    private String liter = "0";
 
 
-    }
 
 }
