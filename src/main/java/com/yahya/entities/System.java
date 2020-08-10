@@ -44,6 +44,7 @@ public class System extends AuditModel{
         this.liter = "0";
         this.temperature = "0";
         this.time = "10:00";
+        this.enabled = true;
 
     }
 
@@ -51,6 +52,7 @@ public class System extends AuditModel{
         this.liter = systemDTO.getLiter();
         this.temperature = systemDTO.getTemperature();
         this.time = systemDTO.getTime();
+        this.enabled = true;
 
     }
 }
