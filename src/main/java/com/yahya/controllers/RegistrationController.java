@@ -8,6 +8,7 @@ import com.yahya.entities.VerificationToken;
 import com.yahya.exceptions.SuccessEntity;
 import com.yahya.repository.VerificationTokenRepository;
 import com.yahya.services.RegistrationService;
+import com.yahya.services.SystemService;
 import com.yahya.services.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,6 +34,9 @@ public class RegistrationController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    private SystemService systemService;
+
     @PostMapping(path = "/signup")
     public SuccessEntity register(@RequestBody RegistrationDTO registrationDTO) {
 
@@ -57,7 +61,9 @@ public class RegistrationController {
         }
 
         user.setEnabled(true);
+        systemService.save(user.getEmail());
         userService.save(user);
+
 
         return new SuccessEntity(200, user, null);
 

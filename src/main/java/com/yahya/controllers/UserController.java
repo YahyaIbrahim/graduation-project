@@ -59,7 +59,7 @@ public class UserController {
     @PostMapping(path = "{email}/system-post",produces =  "application/json")
     public SuccessString systemPost(@PathVariable("email") String email, @RequestBody SystemDTO systemDTO) {
         try {
-            systemService.save(systemDTO,email);
+            systemService.edit(systemDTO,email);
             return new SuccessString(200,  "Done", null);
         }catch (NullPointerException d) {
             return new SuccessString(400,  null, "error");
