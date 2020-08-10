@@ -1,5 +1,6 @@
 package com.yahya.services;
 
+import com.yahya.DTO.UserDTO;
 import com.yahya.entities.User;
 import com.yahya.exceptions.SuccessEntity;
 import com.yahya.repository.UserRepo;
@@ -41,9 +42,13 @@ public class UserService {
 
     }
 
-    public SuccessEntity editByEmail(String email, User profileDTO) {
+    public SuccessEntity editByEmail(String email, UserDTO profileDTO) {
 
         User updatedUser = userRepo.findByEmail(email);
+
+        if(profileDTO.getEmail() != null)
+            updatedUser.setEmail(profileDTO.getEmail());
+
 
         if(profileDTO.getName() != null)
             updatedUser.setName(profileDTO.getName());

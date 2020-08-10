@@ -4,6 +4,7 @@ package com.yahya.controllers;
 
 import com.yahya.DTO.EmailDTO;
 import com.yahya.DTO.SystemDTO;
+import com.yahya.DTO.UserDTO;
 import com.yahya.entities.System;
 import com.yahya.entities.User;
 import com.yahya.exceptions.SuccessEntity;
@@ -32,8 +33,8 @@ public class UserController {
 
 
     @ApiOperation(value = "Updates profile.")
-    @PostMapping(path = "/edit/{email}",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
-    public SuccessEntity editByEmail(@PathVariable("email") String email, @RequestBody User profile) {
+    @PostMapping(path = "/edit/{email}",produces = "application/json")
+    public SuccessEntity editByEmail(@PathVariable("email") String email, @RequestBody UserDTO profile) {
         java.lang.System.out.println(profile);
         return profileService.editByEmail(email, profile);
     }
@@ -42,7 +43,7 @@ public class UserController {
 
 
     @ApiOperation(value = "change password")
-    @PostMapping(path = "/changepassword",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/changepassword",produces = "application/json")
     public SuccessString changePassword(@RequestBody EmailDTO email) {
         try {
             profileService.changePassword(email.getEmail());
