@@ -55,7 +55,7 @@ public class UserController {
 
 
     @ApiOperation(value = "System")
-    @PostMapping(path = "{email}/system-post",produces = MediaType.APPLICATION_JSON_VALUE ,consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "{email}/system-post",produces =  "application/json")
     public SuccessString systemPost(@PathVariable("email") String email, @RequestBody SystemDTO systemDTO) {
         try {
             systemService.save(systemDTO,email);
