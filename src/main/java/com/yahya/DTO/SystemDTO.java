@@ -16,4 +16,12 @@ public class SystemDTO {
     @NotNull
     private String liter;
 
+    public SystemDTO() {
+        this.liter = "0";
+        this.temperature = "0";
+        this.time = "10:00";
+
+
+    }
+
 }
