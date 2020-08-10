@@ -44,7 +44,7 @@ public class SystemService {
         if(systemDTO.getTime() != null) {
             system.setTime(systemDTO.getTime());
         }
-
+        system.setEnabled(true);
         systemRepo.save(system);
 
         return new SuccessSystem(200, system, null);
