@@ -33,7 +33,7 @@ public class UserController {
 
 
     @ApiOperation(value = "Updates profile.")
-    @PostMapping(path = "/edit/{email}",produces = "application/json")
+    @PostMapping(path = "/{email}/edit",produces = "application/json")
     public SuccessEntity editByEmail(@PathVariable("email") String email, @RequestBody UserDTO profile) {
         java.lang.System.out.println(profile);
         return profileService.editByEmail(email, profile);
