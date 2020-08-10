@@ -24,15 +24,15 @@ public class System extends AuditModel{
 
     @NotNull
     @Column(name = "temperature")
-    private String temperature ="0";
+    private String temperature ;
 
     @NotNull
     @Column(name = "time")
-    private String time ="10:00";
+    private String time ;
 
     @NotNull
     @Column(name = "liter")
-    private String liter ="0";
+    private String liter ;
 
     @JsonIgnore
     @ManyToOne
