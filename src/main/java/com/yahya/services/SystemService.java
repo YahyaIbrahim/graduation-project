@@ -30,7 +30,7 @@ public class SystemService {
 
     }
 
-    public SuccessSystem edit(SystemDTO systemDTO,String email){
+    public SuccessSystem edit(System systemDTO,String email){
         User user = userRepo.findByEmail(email);
         System system = systemRepo.findTopByUserOrderByIdDesc(user);
 

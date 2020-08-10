@@ -57,12 +57,11 @@ public class UserController {
 
     @ApiOperation(value = "System")
     @PostMapping(path = "{email}/system-post",produces =  "application/json")
-    public SuccessString systemPost(@PathVariable("email") String email, @RequestBody SystemDTO systemDTO) {
+    public SuccessSystem systemPost(@PathVariable("email") String email, @RequestBody System systemDTO) {
         try {
-            systemService.edit(systemDTO,email);
-            return new SuccessString(200,  "Done", null);
+            return systemService.edit(systemDTO,email);
         }catch (NullPointerException d) {
-            return new SuccessString(400,  null, "error");
+            return new SuccessSystem(400,  null, "error");
         }
 
     }
