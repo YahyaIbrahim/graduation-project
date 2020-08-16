@@ -44,14 +44,17 @@ public class SystemService {
             system.setTime(system.getTime());
 
         if(systemDTO.getLiter() != null ) {
+            java.lang.System.out.println(systemDTO.getLiter());
             system.setLiter(systemDTO.getLiter());
              systemRepo.save(system);
         }
         if(systemDTO.getTemperature() != null ) {
+            java.lang.System.out.println(systemDTO.getTemperature());
             system.setTemperature(systemDTO.getTemperature());
             systemRepo.save(system);
         }
         if(systemDTO.getTime() != null ) {
+            java.lang.System.out.println(systemDTO.getTime());
             system.setTime(systemDTO.getTime());
             systemRepo.save(system);
         }
