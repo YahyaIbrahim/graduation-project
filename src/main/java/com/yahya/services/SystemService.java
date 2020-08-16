@@ -43,18 +43,21 @@ public class SystemService {
         if(systemDTO.getTime() == null )
             system.setTime(system.getTime());
 
-        if(systemDTO.getLiter() != null )
+        if(systemDTO.getLiter() != null ) {
             system.setLiter(systemDTO.getLiter());
-
-        if(systemDTO.getTemperature() != null )
-            system.setTemperature(systemDTO.getTemperature() );
-
-        if(systemDTO.getTime() != null )
+             systemRepo.save(system);
+        }
+        if(systemDTO.getTemperature() != null ) {
+            system.setTemperature(systemDTO.getTemperature());
+            systemRepo.save(system);
+        }
+        if(systemDTO.getTime() != null ) {
             system.setTime(systemDTO.getTime());
+            systemRepo.save(system);
+        }
 
-        System system1 = systemRepo.save(system);
 
-        return new SuccessSystem(200, system1, null);
+        return new SuccessSystem(200, system, null);
 
     }
 
