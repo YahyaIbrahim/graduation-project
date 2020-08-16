@@ -39,15 +39,18 @@ public class SystemService {
         java.lang.System.out.println(system.getTime());
         java.lang.System.out.println("Second Test");
 
-        if(systemDTO.getLiter() == null )
+        if(systemDTO.getLiter() == null ) {
             system.setLiter(system.getLiter());
-
-        if(systemDTO.getTemperature() == null )
+            systemRepo.save(system);
+        }
+        if(systemDTO.getTemperature() == null ) {
             system.setTemperature(system.getTemperature());
-
-        if(systemDTO.getTime() == null )
+            systemRepo.save(system);
+        }
+        if(systemDTO.getTime() == null ) {
             system.setTime(system.getTime());
-
+            systemRepo.save(system);
+        }
         if(systemDTO.getLiter() != null ) {
             java.lang.System.out.println(systemDTO.getLiter());
             java.lang.System.out.println(" Test");
