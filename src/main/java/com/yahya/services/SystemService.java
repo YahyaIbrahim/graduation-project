@@ -43,9 +43,9 @@ public class SystemService {
         if(systemDTO.getTime() != null)
             system.setTime(systemDTO.getTime());
 
-        systemRepo.save(system);
+        System system1 = systemRepo.save(system);
 
-        return new SuccessSystem(200, system, null);
+        return new SuccessSystem(200, system1, null);
 
     }
 
