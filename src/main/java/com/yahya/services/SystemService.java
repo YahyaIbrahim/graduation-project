@@ -34,13 +34,13 @@ public class SystemService {
         User user = userRepo.findByEmail(email);
         System system = systemRepo.findTopByUserOrderByIdDesc(user);
 
-        if(systemDTO.getLiter() != null || systemDTO.getTemperature() != "")
+        if(systemDTO.getLiter() != null || !systemDTO.getTemperature().equals(""))
             system.setLiter(systemDTO.getLiter());
 
-        if(systemDTO.getTemperature() != null || systemDTO.getLiter() != "")
+        if(systemDTO.getTemperature() != null || !systemDTO.getLiter().equals(""))
             system.setTemperature(systemDTO.getTemperature() );
 
-        if(systemDTO.getTime() != null || systemDTO.getTime() != "")
+        if(systemDTO.getTime() != null || !systemDTO.getTime().isEmpty())
             system.setTime(systemDTO.getTime());
 
         System system1 = systemRepo.save(system);
