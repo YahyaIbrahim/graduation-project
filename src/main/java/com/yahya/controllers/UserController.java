@@ -56,7 +56,7 @@ public class UserController {
 
 
     @ApiOperation(value = "System")
-    @PostMapping(path = "{email}/system-post",produces =  "application/json")
+    @PostMapping(path = "/{email}/system-post",produces =  "application/json")
     public SuccessSystem systemPost(@PathVariable("email") String email, @RequestBody System systemDTO) {
         try {
             return systemService.edit(systemDTO,email);
@@ -68,7 +68,7 @@ public class UserController {
 
 
     @ApiOperation(value = "System")
-    @GetMapping(path = "{email}/system-get",produces = "application/json")
+    @GetMapping(path = "/{email}/system-get",produces = "application/json")
     public SuccessSystem systemPost(@PathVariable("email") String email) {
         try {
             User user = profileService.loadByEmail(email);
