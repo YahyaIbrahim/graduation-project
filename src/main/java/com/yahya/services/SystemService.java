@@ -34,6 +34,10 @@ public class SystemService {
         User user = userRepo.findByEmail(email);
         System system = systemRepo.findTopByUserOrderByIdDesc(user);
 
+        java.lang.System.out.println(system.getLiter());
+        java.lang.System.out.println(system.getTemperature());
+        java.lang.System.out.println(system.getLiter());
+
         if(systemDTO.getLiter() == null )
             system.setLiter(system.getLiter());
 
@@ -45,16 +49,19 @@ public class SystemService {
 
         if(systemDTO.getLiter() != null ) {
             java.lang.System.out.println(systemDTO.getLiter());
+            java.lang.System.out.println(system.getLiter());
             system.setLiter(systemDTO.getLiter());
              systemRepo.save(system);
         }
         if(systemDTO.getTemperature() != null ) {
             java.lang.System.out.println(systemDTO.getTemperature());
+            java.lang.System.out.println(system.getTemperature());
             system.setTemperature(systemDTO.getTemperature());
             systemRepo.save(system);
         }
         if(systemDTO.getTime() != null ) {
             java.lang.System.out.println(systemDTO.getTime());
+            java.lang.System.out.println(system.getTime());
             system.setTime(systemDTO.getTime());
             systemRepo.save(system);
         }
