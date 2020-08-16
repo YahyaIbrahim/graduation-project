@@ -39,19 +39,14 @@ public class SystemService {
         java.lang.System.out.println("System "+system.getTime());
         java.lang.System.out.println("Second Test");
 
-        if(systemDTO.getLiter() == null || systemDTO.getLiter().isEmpty()) {
-            system.setLiter(system.getLiter());
-            systemRepo.save(system);
-        }
-        if(systemDTO.getTemperature() == null || systemDTO.getTemperature().isEmpty()) {
-            system.setTemperature(system.getTemperature());
-            systemRepo.save(system);
-        }
-        if(systemDTO.getTime() == null || systemDTO.getTime().isEmpty()) {
-            system.setTime(system.getTime());
-            systemRepo.save(system);
-        }
+
+
+
         if(systemDTO.getLiter() != null ) {
+            if(systemDTO.getLiter() == null) {
+                system.setLiter(system.getLiter());
+                systemRepo.save(system);
+            }
             java.lang.System.out.println("SystemDTO "+systemDTO.getLiter());
             java.lang.System.out.println(" Test");
             java.lang.System.out.println("System "+system.getLiter());
@@ -59,6 +54,10 @@ public class SystemService {
              systemRepo.save(system);
         }
         if(systemDTO.getTemperature() != null ) {
+            if(systemDTO.getTemperature() == null ) {
+                system.setTemperature(system.getTemperature());
+                systemRepo.save(system);
+            }
             java.lang.System.out.println("SystemDTO "+systemDTO.getTemperature());
             java.lang.System.out.println(" Test");
             java.lang.System.out.println("System "+system.getTemperature());
@@ -66,6 +65,10 @@ public class SystemService {
             systemRepo.save(system);
         }
         if(systemDTO.getTime() != null ) {
+            if(systemDTO.getTime() == null ) {
+                system.setTime(system.getTime());
+                systemRepo.save(system);
+            }
             java.lang.System.out.println("SystemDTO "+systemDTO.getTime());
             java.lang.System.out.println(" Test");
             java.lang.System.out.println("System "+system.getTime());
