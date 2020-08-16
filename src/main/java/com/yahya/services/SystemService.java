@@ -36,7 +36,7 @@ public class SystemService {
         java.lang.System.out.println("First Test");
         java.lang.System.out.println(system.getLiter());
         java.lang.System.out.println(system.getTemperature());
-        java.lang.System.out.println(system.getLiter());
+        java.lang.System.out.println(system.getTime());
         java.lang.System.out.println("Second Test");
 
         if(systemDTO.getLiter() == null )
