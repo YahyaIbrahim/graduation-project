@@ -34,41 +34,41 @@ public class SystemService {
         User user = userRepo.findByEmail(email);
         System system = systemRepo.findTopByUserOrderByIdDesc(user);
         java.lang.System.out.println("First Test");
-        java.lang.System.out.println("System"+system.getLiter());
-        java.lang.System.out.println("System"+system.getTemperature());
-        java.lang.System.out.println("System"+system.getTime());
+        java.lang.System.out.println("System "+system.getLiter());
+        java.lang.System.out.println("System "+system.getTemperature());
+        java.lang.System.out.println("System "+system.getTime());
         java.lang.System.out.println("Second Test");
 
-        if(systemDTO.getLiter() == null ) {
+        if(systemDTO.getLiter() == null || systemDTO.getLiter().isEmpty()) {
             system.setLiter(system.getLiter());
             systemRepo.save(system);
         }
-        if(systemDTO.getTemperature() == null ) {
+        if(systemDTO.getTemperature() == null || systemDTO.getTemperature().isEmpty()) {
             system.setTemperature(system.getTemperature());
             systemRepo.save(system);
         }
-        if(systemDTO.getTime() == null ) {
+        if(systemDTO.getTime() == null || systemDTO.getTime().isEmpty()) {
             system.setTime(system.getTime());
             systemRepo.save(system);
         }
         if(systemDTO.getLiter() != null ) {
-            java.lang.System.out.println("SystemDTO"+systemDTO.getLiter());
+            java.lang.System.out.println("SystemDTO "+systemDTO.getLiter());
             java.lang.System.out.println(" Test");
-            java.lang.System.out.println("System"+system.getLiter());
+            java.lang.System.out.println("System "+system.getLiter());
             system.setLiter(systemDTO.getLiter());
              systemRepo.save(system);
         }
         if(systemDTO.getTemperature() != null ) {
-            java.lang.System.out.println("SystemDTO"+systemDTO.getTemperature());
+            java.lang.System.out.println("SystemDTO "+systemDTO.getTemperature());
             java.lang.System.out.println(" Test");
-            java.lang.System.out.println("System"+system.getTemperature());
+            java.lang.System.out.println("System "+system.getTemperature());
             system.setTemperature(systemDTO.getTemperature());
             systemRepo.save(system);
         }
         if(systemDTO.getTime() != null ) {
-            java.lang.System.out.println("SystemDTO"+systemDTO.getTime());
+            java.lang.System.out.println("SystemDTO "+systemDTO.getTime());
             java.lang.System.out.println(" Test");
-            java.lang.System.out.println("System"+system.getTime());
+            java.lang.System.out.println("System "+system.getTime());
             system.setTime(systemDTO.getTime());
             systemRepo.save(system);
         }
