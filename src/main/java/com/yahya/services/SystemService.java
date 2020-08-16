@@ -22,9 +22,9 @@ public class SystemService {
     public void save(String email){
         User user = userRepo.findByEmail(email);
         System system = new System();
-        system.setLiter("0");
-        system.setTemperature("0");
-        system.setTime("00:00");
+        system.setLiter("");
+        system.setTemperature("");
+        system.setTime("");
         system.setUser(user);
         systemRepo.save(system);
 
@@ -34,13 +34,13 @@ public class SystemService {
         User user = userRepo.findByEmail(email);
         System system = systemRepo.findTopByUserOrderByIdDesc(user);
 
-        if(systemDTO.getLiter() != null || !systemDTO.getTemperature().equals(""))
+        if(systemDTO.getLiter() != null )
             system.setLiter(systemDTO.getLiter());
 
-        if(systemDTO.getTemperature() != null || !systemDTO.getLiter().equals(""))
+        if(systemDTO.getTemperature() != null )
             system.setTemperature(systemDTO.getTemperature() );
 
-        if(systemDTO.getTime() != null || !systemDTO.getTime().isEmpty())
+        if(systemDTO.getTime() != null )
             system.setTime(systemDTO.getTime());
 
         System system1 = systemRepo.save(system);
