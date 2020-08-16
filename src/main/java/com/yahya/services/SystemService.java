@@ -45,37 +45,36 @@ public class SystemService {
         if(systemDTO.getLiter() != null ) {
             if(systemDTO.getLiter() == null) {
                 system.setLiter(system.getLiter());
-                systemRepo.save(system);
+            }else {
+                java.lang.System.out.println("SystemDTO " + systemDTO.getLiter());
+                java.lang.System.out.println(" Test");
+                java.lang.System.out.println("System " + system.getLiter());
+                system.setLiter(systemDTO.getLiter());
             }
-            java.lang.System.out.println("SystemDTO "+systemDTO.getLiter());
-            java.lang.System.out.println(" Test");
-            java.lang.System.out.println("System "+system.getLiter());
-            system.setLiter(systemDTO.getLiter());
-             systemRepo.save(system);
+            systemRepo.save(system);
         }
         if(systemDTO.getTemperature() != null ) {
             if(systemDTO.getTemperature() == null ) {
                 system.setTemperature(system.getTemperature());
-                systemRepo.save(system);
+            }else {
+                java.lang.System.out.println("SystemDTO " + systemDTO.getTemperature());
+                java.lang.System.out.println(" Test");
+                java.lang.System.out.println("System " + system.getTemperature());
+                system.setTemperature(systemDTO.getTemperature());
             }
-            java.lang.System.out.println("SystemDTO "+systemDTO.getTemperature());
-            java.lang.System.out.println(" Test");
-            java.lang.System.out.println("System "+system.getTemperature());
-            system.setTemperature(systemDTO.getTemperature());
             systemRepo.save(system);
         }
         if(systemDTO.getTime() != null ) {
-            if(systemDTO.getTime() == null ) {
+            if (systemDTO.getTime() == null) {
                 system.setTime(system.getTime());
-                systemRepo.save(system);
+            } else {
+                java.lang.System.out.println("SystemDTO " + systemDTO.getTime());
+                java.lang.System.out.println(" Test");
+                java.lang.System.out.println("System " + system.getTime());
+                system.setTime(systemDTO.getTime());
             }
-            java.lang.System.out.println("SystemDTO "+systemDTO.getTime());
-            java.lang.System.out.println(" Test");
-            java.lang.System.out.println("System "+system.getTime());
-            system.setTime(systemDTO.getTime());
             systemRepo.save(system);
         }
-
 
         return new SuccessSystem(200, system, null);
 
